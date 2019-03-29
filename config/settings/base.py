@@ -42,7 +42,7 @@ USE_TZ = True
 
 DATABASES = {
     "default": env.db(
-        "DATABASE_URL", default="postgres://localhost/jamstargram"
+        "DATABASE_URL", default="postgres://postgres:rlawoans2@localhost:5432/jamstargram"
     ),
 }
 DATABASES["default"]["ATOMIC_REQUESTS"] = True
@@ -67,7 +67,6 @@ DJANGO_APPS = [
     "django.contrib.admin",
 ]
 THIRD_PARTY_APPS = [
-    "crispy_forms",
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
@@ -75,6 +74,7 @@ THIRD_PARTY_APPS = [
 ]
 LOCAL_APPS = [
     "jamstargram.users.apps.UsersAppConfig",
+    "jamstargram.images.apps.ImagesConfig",
     # Your stuff: custom apps go here
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
